@@ -1,37 +1,19 @@
-/*
-========================================
-MODERN & RESPONSIVE TIC-TAC-TOE STYLES
-========================================
-*/
-
 :root {
-    /* Modernisierte Farbpalette */
-    --primary-color: #5A67D8; /* Sattes Indigo */
-    --secondary-color: #DD6B20; /* Kräftiges Orange */
-    --tertiary-color: #A0AEC0; /* Weiches Grau */
-    --accent-color: #38A169; /* Lebhaftes Grün */
-    --danger-color: #E53E3E; /* Klares Rot */
-    
-    /* Text & Hintergründe */
-    --dark-text: #2D3748;
-    --light-text: #FFFFFF;
-    --bg-light: #F7FAFC;
-    --bg-medium: #EDF2F7;
-    --bg-dark: #E2E8F0;
-    
-    /* UI-Elemente */
-    --border-color: #CBD5E0;
-    --shadow-sm: rgba(0, 0, 0, 0.05);
-    --shadow-md: rgba(0, 0, 0, 0.1);
-    --shadow-lg: rgba(0, 0, 0, 0.15);
-
-    /* Konsistente Radien */
-    --radius-sm: 5px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
+    --primary-color: #6a89cc; /* Sanftes Blau */
+    --secondary-color: #f7a76c; /* Orangerot */
+    --tertiary-color: #a4b0be; /* Grau */
+    --accent-color: #4CAF50; /* Grün für Erfolg */
+    --danger-color: #e74c3c; /* Rot für Fehler/X */
+    --dark-text: #333;
+    --light-text: #fff;
+    --bg-light: #f4f7f6;
+    --bg-medium: #e0e6e9;
+    --bg-dark: #cbd2d8;
+    --border-color: #b0c4de; /* Hellblau-Grau */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
 }
 
-/* === Basis & Layout === */
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -40,303 +22,350 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-medium) 100%);
     margin: 0;
-    padding: 1rem; /* Besser als px für Skalierbarkeit */
+    padding: 20px;
     box-sizing: border-box;
     color: var(--dark-text);
 }
 
 .container {
     background-color: var(--light-text);
-    padding: 2.5rem;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 10px 25px -5px var(--shadow-md), 0 8px 10px -6px var(--shadow-sm);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
     text-align: center;
     max-width: 500px;
     width: 100%;
-    transition: padding 0.3s ease;
 }
 
-/* === Typografie === */
 h1 {
     color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 2.2em;
+    margin-bottom: 30px;
+    font-size: 2.5em;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .section-title {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 600;
     color: var(--dark-text);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 .section-text {
-    font-size: 0.9em;
-    color: #718096; /* Etwas weicherer Text */
-    margin-bottom: 1rem;
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
 }
 
-/* === Buttons === */
+/* --- Buttons --- */
 .btn {
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
+    padding: 12px 25px;
+    margin: 8px;
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 4px 6px -1px var(--shadow-sm);
-    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     box-shadow: none;
-    transform: none;
-}
-
-.btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 10px -3px var(--shadow-md);
 }
 
 .primary-btn {
-    background-color: var(--primary-color);
+    background: linear-gradient(45deg, var(--primary-color), #8daedc);
     color: var(--light-text);
 }
-.primary-btn:hover:not(:disabled) { background-color: #4C51BF; }
+
+.primary-btn:hover:not(:disabled) {
+    background: linear-gradient(45deg, #5c7ab8, #7ca1d0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
 
 .secondary-btn {
-    background-color: var(--secondary-color);
+    background: linear-gradient(45deg, var(--secondary-color), #ffc18f);
     color: var(--light-text);
 }
-.secondary-btn:hover:not(:disabled) { background-color: #C05621; }
+
+.secondary-btn:hover:not(:disabled) {
+    background: linear-gradient(45deg, #e08f58, #e5a87b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
 
 .tertiary-btn {
     background-color: var(--tertiary-color);
     color: var(--light-text);
 }
-.tertiary-btn:hover:not(:disabled) { background-color: #718096; }
+
+.tertiary-btn:hover:not(:disabled) {
+    background-color: #8c9ba8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
 
 .leave-btn {
     background-color: var(--danger-color);
     color: var(--light-text);
-    margin-top: 0.5rem;
+    margin-top: 10px; /* Abstand zum "Neues Spiel"-Button */
 }
-.leave-btn:hover:not(:disabled) { background-color: #C53030; }
 
+.leave-btn:hover:not(:disabled) {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+/* Rematch-Button speziell */
+#rematchBtn {
+    margin-left: 10px;
+}
 #rematchBtn.rematch-pending {
-    background-color: #ECC94B;
-    color: var(--dark-text);
+    background-color: #FFC300; /* Gelb, um Aufmerksamkeit zu erregen */
+    color: #333;
 }
 
-/* === Formulare & Inputs === */
+
+/* --- Input Field --- */
 .input-field {
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0;
+    padding: 10px 15px;
+    margin: 10px 0;
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border-radius: 8px;
     font-size: 1em;
-    width: 100%;
-    max-width: 300px;
+    width: calc(100% - 30px); /* Adjust for padding */
     box-sizing: border-box;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-field::placeholder { color: #A0AEC0; }
+.input-field::placeholder {
+    color: #aebfd4;
+}
 
 .input-field:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.3);
+    box-shadow: 0 0 0 3px rgba(106, 137, 204, 0.3);
 }
 
+/* --- Layouts --- */
 .join-area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 
-/* === Spielfeld (RESPONSIV) === */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 330px; /* Maximale Größe auf Desktops */
-    aspect-ratio: 1 / 1; /* Hält das Board quadratisch */
-    background-color: var(--bg-dark);
-    border-radius: var(--radius-lg);
-    padding: 0.5rem;
-    box-sizing: border-box;
-    box-shadow: inset 0 2px 4px var(--shadow-sm);
-}
-
-.cell {
-    background-color: var(--light-text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Responsive Schriftgröße, die mit der Zellengröße skaliert */
-    font-size: 15vmin; /* 15% der kleinsten Viewport-Dimension */
-    max-font-size: 4.5rem; /* Verhindert riesige Schrift auf großen Bildschirmen */
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: var(--radius-md);
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    user-select: none; /* Verhindert Textauswahl */
-}
-
-.cell:hover {
-    background-color: var(--bg-medium);
-    transform: scale(1.03);
-}
-
-.cell.x { color: var(--danger-color); }
-.cell.o { color: var(--accent-color); }
-
-.cell.x, .cell.o {
-    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes popIn {
-    from { transform: scale(0.6); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* === Status-Nachrichten === */
-.status-message {
-    margin-top: 1.5rem;
-    font-size: 1.1em;
-    font-weight: 600;
-    padding: 0.75rem 1rem;
-    border-radius: var(--radius-md);
-    transition: all 0.3s ease;
-}
-.status-message.your-turn { background-color: var(--accent-color); color: var(--light-text); }
-.status-message.opponent-turn { background-color: var(--secondary-color); color: var(--light-text); }
-.status-message.waiting { background-color: var(--bg-dark); color: var(--dark-text); }
-.status-message.game-over { background-color: var(--primary-color); color: var(--light-text); }
-.status-message.disconnected { background-color: var(--danger-color); color: var(--light-text); }
-
-
-/* === Sonstige Elemente === */
 .divider {
-    border-top: 1px solid var(--bg-dark);
-    margin: 2rem auto;
+    position: relative;
+    height: 1px;
+    background-color: var(--bg-dark);
+    margin: 30px 0;
     width: 80%;
+    align-self: center;
 }
-.divider span { /* Vereinfachtes Design für das "ODER" */
-    display: none; 
-} 
 
+.divider span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light-text);
+    padding: 0 10px;
+    color: var(--tertiary-color);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* --- Game Info & Status --- */
 .game-info {
-    margin-top: 1rem;
+    margin-top: 15px;
     font-weight: 600;
     color: var(--primary-color);
     font-size: 1.1em;
 }
 
-.game-actions {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
+.status-message {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.status-message.your-turn {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.status-message.opponent-turn {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+
+.status-message.waiting {
+    background-color: var(--bg-dark);
+    color: var(--dark-text);
+}
+
+.status-message.game-over {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.status-message.disconnected {
+    background-color: var(--danger-color);
+    color: var(--light-text);
+}
+
+/* --- Game Board --- */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px; /* Etwas größerer Abstand */
+    margin: 30px auto;
+    width: 316px; /* 3*100px + 2*8px gap */
+    height: 316px;
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: var(--bg-dark);
+    overflow: hidden; /* Für abgerundete Ecken */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px var(--shadow-medium);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5em; /* Etwas größer */
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border-radius: 8px; /* Abgerundete Zellen */
+    position: relative;
+    overflow: hidden;
+}
+
+.cell:hover {
+    background-color: #f0f4f7;
+    transform: scale(1.02);
+}
+
+.cell.x {
+    color: var(--danger-color); /* Rot für X */
+}
+
+.cell.o {
+    color: var(--accent-color); /* Grün für O */
+}
+
+/* Animation for placed marks */
+.cell.x::after,
+.cell.o::after {
+    content: attr(data-symbol); /* Not directly used, but for semantic clarity */
+    position: absolute;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Lobby List --- */
 .game-list {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0;
+    margin: 0;
     text-align: left;
+    margin-top: 15px;
 }
 
 .game-item {
     background-color: var(--bg-light);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.95em;
+    color: var(--dark-text);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.game-item span {
+    font-weight: 500;
 }
 
 .join-lobby-btn {
-    padding: 0.5rem 1rem;
-    background-color: var(--accent-color);
+    padding: 8px 15px;
+    background: linear-gradient(45deg, var(--accent-color), #74d677);
     color: var(--light-text);
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 0.9em;
     font-weight: 600;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
-.join-lobby-btn:hover { background-color: #2F855A; }
 
-/* === Matchmaking Spinner === */
+.join-lobby-btn:hover {
+    background: linear-gradient(45deg, #44a048, #63c666);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Matchmaking Status Styles */
 #matchmaking-status {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 150px;
+    min-height: 150px; /* Genug Platz für Spinner und Text */
 }
 
 .spinner {
-    border: 4px solid var(--bg-dark);
+    border: 4px solid rgba(0, 0, 0, 0.1);
     border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
-    margin: 1.5rem 0;
+    margin: 20px 0;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/*
-========================================
-📱 RESPONSIVE ANPASSUNGEN (MOBILE-FIRST)
-========================================
-*/
+.matchmaking-btn {
+    width: 100%; /* Matchmaking Button volle Breite */
+    max-width: 300px;
+    margin-bottom: 20px;
+}
 
-@media (max-width: 500px) {
-    body {
-        padding: 0.5rem; /* Weniger Abstand am Rand */
-    }
-
-    .container {
-        padding: 1.5rem; /* Weniger Innenabstand */
-    }
-
-    h1 {
-        font-size: 1.8em; /* Kleinere Überschrift */
-    }
-
-    .btn {
-        padding: 0.7rem 1rem; /* Kompaktere Buttons */
-        font-size: 0.9em;
-    }
-
-    .game-board {
-        gap: 0.4rem;
-        padding: 0.4rem;
-    }
-
-    .cell {
-        font-size: 20vw; /* Passt die Schriftgröße an die schmalere Breite an */
-    }
+.game-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Abstand zwischen den Buttons */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Buttons können umbrechen, wenn nicht genug Platz */
 }
