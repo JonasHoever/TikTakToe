@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://localhost:8443'); // WSS für sichere Verbindung, Port 8443
+const socket = new WebSocket('ws://localhost:3000'); // Stelle sicher, dass der Port übereinstimmt!
 
 // --- DOM-Elemente ---
 const createCustomGameBtn = document.getElementById('createCustomGameBtn');
