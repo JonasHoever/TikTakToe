@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://jonashoever.de/ws'); // Stelle sicher, dass der Port übereinstimmt!
+const socket = new WebSocket('wss://localhost:8443'); // WSS für sichere Verbindung, Port 8443
 
 // --- DOM-Elemente ---
 const createCustomGameBtn = document.getElementById('createCustomGameBtn');
