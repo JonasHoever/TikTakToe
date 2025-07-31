@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://jonashoever.de:3000'); // Stelle sicher, dass der Port übereinstimmt!
+const socket = new WebSocket('wss://jonashoever.de/ws'); // Stelle sicher, dass der Port übereinstimmt!
 
 // --- DOM-Elemente ---
 const createCustomGameBtn = document.getElementById('createCustomGameBtn');
