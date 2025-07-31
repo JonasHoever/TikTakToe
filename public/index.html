@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Tic-Tac-Toe</h1>
+
+        <div id="game-setup">
+            <h2 class="section-title">Schnelles Spiel (Matchmaking)</h2>
+            <p>Finde sofort einen zufälligen Gegner!</p>
+            <button id="joinMatchmakingBtn" class="btn primary-btn matchmaking-btn">Spiel starten</button>
+
+            <div class="divider"><span>ODER</span></div>
+
+            <h2 class="section-title">Privates Spiel (Custom Game)</h2>
+            <p>Erstelle ein privates Spiel oder trete einem bei.</p>
+            <button id="createCustomGameBtn" class="btn secondary-btn">Privates Spiel erstellen</button>
+            <p class="section-text">Teile die Spiel-ID mit Freunden.</p>
+
+            <div class="join-area">
+                <input type="text" id="gameIdInput" placeholder="Spiel-ID eingeben (z.B. 123)" class="input-field">
+                <button id="joinCustomGameBtn" class="btn secondary-btn">Privatem Spiel beitreten</button>
+            </div>
+
+            <div class="divider"><span>Oder in der Lobby beitreten</span></div>
+
+            <h2 class="section-title">Offene private Spiele</h2>
+            <ul id="availableGamesList" class="game-list">
+                <li>Lade Spiele...</li>
+            </ul>
+        </div>
+
+        <div id="matchmaking-status" style="display: none;">
+            <p class="status-message waiting">Suche nach einem Gegner...</p>
+            <div class="spinner"></div> <button id="cancelMatchmakingBtn" class="btn tertiary-btn">Matchmaking abbrechen</button>
+        </div>
+
+
+        <div id="game-area" style="display: none;">
+            <p id="gameInfo" class="game-info"></p>
+            <p id="status-message" class="status-message"></p>
+            <div id="game-board" class="game-board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="game-actions">
+                <button id="newGameBtn" class="btn tertiary-btn" style="display: none;">Neues Spiel starten</button>
+                <button id="rematchBtn" class="btn secondary-btn" style="display: none;">Revanche!</button>
+                <button id="leaveGameBtn" class="btn leave-btn" style="display: none;">Spiel verlassen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/client.js"></script>
+</body>
+</html>
